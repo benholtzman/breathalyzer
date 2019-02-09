@@ -11,7 +11,8 @@ from sht_sensor import Sht
 # https://docs.microsoft.com/en-us/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsrpi
 volt_read = '3.5V' # Sht.VDDLevel.vdd_5v
 print(volt_read)
-yellow_clock_pin = 21
+# these numbers are the GPIO numbers, not the pin numbers ! 
+yellow_clock_pin = 11
 blue_data_pin = 17
 sht = Sht(yellow_clock_pin, blue_data_pin, voltage=volt_read)
 T_C = sht.read_t()
@@ -48,7 +49,7 @@ hum = np.array(hum_ls)
 # write to panda and pickle it !
 
 data = pd.DataFrame({'time_s':time_s, 'temp_C':temp_C, 'hum':hum})
-data.to_pickle('./y181231_allday.pkl')
+data.to_pickle('./y190209_test.pkl')
 
 
 
