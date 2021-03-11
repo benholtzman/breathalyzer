@@ -11,10 +11,30 @@ installing python packages with pip, not conda.
 https://www.raspberrypi.org/documentation/linux/software/python.md
 
 
+
+
+
+
+
+
+https://pinout.xyz/
+A
 ----------------------------------------------
 circuitpython on rpi
 
 https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/circuitpython-raspi
 
 https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi 
+sensors
 
+HTU:
+https://github.com/adafruit/Adafruit_CircuitPython_HTU21D
+
+B
+
+
+DHT:
+https://learn.adafruit.com/dht
+https://github.com/adafruit/Adafruit_CircuitPython_DHT  
+c
+https://www.adafruit.com/product/393
