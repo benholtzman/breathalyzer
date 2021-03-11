@@ -1,40 +1,88 @@
+Sensors and Signals: 
 
 
-
-this is a placeholder for the google doc.. 
-
-
-
---------------------------
-installing python packages with pip, not conda. 
+Analog (continuously variable current or voltage) 
+vs 
+Digital (1s and 0s, encoded as bits)
+https://learn.sparkfun.com/tutorials/analog-vs-digital
  
-https://www.raspberrypi.org/documentation/linux/software/python.md
+More on I2C, that many cheap digital sensors or Analog to Digital Converters (ADC) use:
+https://learn.sparkfun.com/tutorials/i2c
 
+-------------------------------------------------------------------------------
+Microcontrollers and Single-board computers (SBC)
+-------------------------------------------------------------------------------
+https://www.freecodecamp.org/news/hardware-fundamentals-what-exactly-is-a-microcontroller-8a502a3650dc/
 
+Arduino is natively analog: i.e. an arduino IS an analog to digital converter (ADC): 
+https://www.arduino.cc/
+(limitation: you must use their language to connect and 
 
+Raspberry Pi is a full computer with an operating system (Linux)
+They are natively digital, 
+so either needs digital sensors (the ADC is on the sensor board) 
+or an ADC board connected to it. 
+You can do everything in python. 
 
+Now 1000 other microcontroller and SBC boards out there, but these have the largest user groups and online communities, especially well tuned to people starting out. 
+https://www.adafruit.com/
+https://www.sparkfun.com/
 
+-------------------------------------------------------------------------------
+How to get started with a Raspberry Pi (Rpi): 
+-------------------------------------------------------------------------------
+(0) Get a Raspberry Pi (borrow from CMC or buy one: 3 or 4 range from 35$ to 85$: 
+https://www.adafruit.com/product/3055?src=raspberrypi  3 B+ with 1 Gb RAM. 
 
+(1) get a micro SD card and install a version of the operating system on it: 
+https://www.raspberrypi.org/documentation/installation/installing-images/
+(three choices: Lite, OS, OS Full) 
+https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
 
+And you’ll need a keyboard, mouse, and monitor that is HDMI compatible, and some other wiring bits and maybe a breadboard…  
 
-https://pinout.xyz/
-A
-----------------------------------------------
-circuitpython on rpi
+-------------------------------------------------------------------------------
+Install circuitpython to let python connect to the input pins: 
+-------------------------------------------------------------------------------
+https://pinout.xyz/  maps the pin layout on Rpi . 
 
+After your Rpi is all setup and running, then you can setup “circuitpython”, a python library (and a standalone version of python, for tiny boards) that is developed by people at Adafruit:  
 https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/circuitpython-raspi
 
-https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi 
-sensors
+https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
+
+Note that it is recommended to install python packages with pip, not conda.
+https://www.raspberrypi.org/documentation/linux/software/python.md
+
+-------------------------------------------------------------------------------
+Setup a sensor: 
+-------------------------------------------------------------------------------
+Every sensor might need some different approach. 
+GPIO
+I2C
+
+Breathalyzer uses this sensor: 
+
+Temperature and Humidity sensors:
 
 HTU:
 https://github.com/adafruit/Adafruit_CircuitPython_HTU21D
 
-B
-
-
 DHT:
 https://learn.adafruit.com/dht
-https://github.com/adafruit/Adafruit_CircuitPython_DHT  
-c
+https://github.com/adafruit/Adafruit_CircuitPython_DHT
+
 https://www.adafruit.com/product/393
+
+-------------------------------------------------------------------------------
+Then what?  
+-------------------------------------------------------------------------------
+Get data from the sensor and either setup the Rpi to visualize and sonify, or 
+move data from the RPi to your computer (either via the internet, or a local network, or a USB stick!). 
+Do do things locally, you’ll need to install matplotlib and pandas, for example. 
+And clone breathalyzer repository on github, for example: 
+>> git clone https://github.com/benholtzman/breathalyzer
+And datamovies_y21 (though I have not tried to run notebooks on Rpi yet-- much easier to run scripts. You can develop them on your computer…
+
+
+
