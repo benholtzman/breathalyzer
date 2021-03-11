@@ -9,3 +9,12 @@ this is a placeholder for the google doc..
 installing python packages with pip, not conda. 
  
 https://www.raspberrypi.org/documentation/linux/software/python.md
+
+
+----------------------------------------------
+circuitpython on rpi
+
+https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/circuitpython-raspi
+
+https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi 
+
